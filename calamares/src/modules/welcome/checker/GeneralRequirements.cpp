@@ -128,6 +128,7 @@ GeneralRequirements::checkRequirements()
     // {
     //     hasInternet = checkHasInternet();
     // }
+    hasInternet = true;
 
     if ( m_entriesToCheck.contains( "root" ) )
     {

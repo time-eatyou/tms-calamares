@@ -124,10 +124,10 @@ GeneralRequirements::checkRequirements()
         hasPower = checkHasPower();
     }
 
-    if ( m_entriesToCheck.contains( "internet" ) )
-    {
-        hasInternet = checkHasInternet();
-    }
+    // if ( m_entriesToCheck.contains( "internet" ) )
+    // {
+    //     hasInternet = checkHasInternet();
+    // }
 
     if ( m_entriesToCheck.contains( "root" ) )
     {

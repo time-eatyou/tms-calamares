@@ -186,14 +186,14 @@ GeneralRequirements::checkRequirements()
                                    hasPower,
                                    required } );
         }
-        else if ( entry == "internet" )
-        {
-            checkEntries.append( { entry,
-                                   [] { return tr( "is connected to the Internet" ); },
-                                   [] { return tr( "The system is not connected to the Internet." ); },
-                                   hasInternet,
-                                   required } );
-        }
+        // else if ( entry == "internet" )
+        // {
+        //     checkEntries.append( { entry,
+        //                            [] { return tr( "is connected to the Internet" ); },
+        //                            [] { return tr( "The system is not connected to the Internet." ); },
+        //                            hasInternet,
+        //                            required } );
+        // }
         else if ( entry == "root" )
         {
             checkEntries.append( { entry,

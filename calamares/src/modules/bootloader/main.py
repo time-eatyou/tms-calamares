@@ -639,12 +639,7 @@ def run_grub_install(fw_type, partitions, efi_directory, install_hybrid_grub):
                                    "--force"])
     else:
 
-        libcalamares.utils.debug("run_grub_install------else bios 1")
-        if efi_directory is not None and not install_hybrid_grub:
-            libcalamares.utils.warning(_("Cannot install BIOS bootloader on UEFI installation when install_hybrid_grub is 'False'!"))
-            
-
-        if libcalamares.globalstorage.value("bootLoader") is None:
+        if libcalamares.globalstorage.value("bootLoader") is None and install_hybrid_grub:
             efi_install_path = libcalamares.globalstorage.value("efiSystemPartition")
             if efi_install_path is None or efi_install_path == "":
                 efi_install_path = "/boot/efi"
@@ -655,7 +650,6 @@ def run_grub_install(fw_type, partitions, efi_directory, install_hybrid_grub):
                 return
             boot_loader_install_path = "/dev/" + boot_loader_install_path.split("\n")[1]
         else:
-            libcalamares.utils.debug("run_grub_install------else bios 1-1 ")
             boot_loader = libcalamares.globalstorage.value("bootLoader")
             boot_loader_install_path = boot_loader["installPath"]
             libcalamares.utils.debug(f"boot_loader_install_path: {boot_loader_install_path}")
@@ -666,7 +660,6 @@ def run_grub_install(fw_type, partitions, efi_directory, install_hybrid_grub):
         # boot_loader_install_path points to the physical disk to install GRUB
         # to. It should start with "/dev/", and be at least as long as the
         # string "/dev/sda".
-        libcalamares.utils.debug("run_grub_install------else bios 2")
         if not boot_loader_install_path.startswith("/dev/") or len(boot_loader_install_path) < 8:
             raise ValueError(f"boot_loader_install_path contains unexpected value '{boot_loader_install_path}'")
 

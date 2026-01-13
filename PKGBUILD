@@ -4,7 +4,7 @@
 _pkgname="calamares"
 pkgname="$_pkgname"
 pkgver=3.4.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Distribution-independent installer framework"
 url="https://codeberg.org/Calamares/calamares"
 license=("GPL-3.0-or-later")
@@ -28,7 +28,7 @@ makedepends=(
 _pkgsrc="$_pkgname"
 _pkgext="tar.gz"
 source=("calamares.zip")
-sha256sums=('9d59a1e630f7ee99b9668b8356f8ab0fe152092ca2d4f01e4c86d79819b414b8')
+sha256sums=('57b3b36d8cf67393ee8e81871106b2f4a5925c120173f92c6d77c8f6003f79d5')
 
 build() {
   local _skip_modules=(
